@@ -1,0 +1,68 @@
+{
+  "daily_count": {
+    "type": "int",
+    "description": "每天刷几条视频",
+    "hint": "每天自动刷的视频条数（0 表示不自动刷）。手动指令 /bili 也遵循此上限。",
+    "default": 5
+  },
+  "keywords": {
+    "type": "string",
+    "description": "刷视频的关键词",
+    "hint": "多个关键词用逗号分隔，例如：明日方舟,原神,科技频道。留空则不执行每日任务。",
+    "default": ""
+  },
+  "run_time": {
+    "type": "string",
+    "description": "每天自动执行时间",
+    "hint": "24 小时制 HH:MM，例如 09:00。",
+    "default": "09:00"
+  },
+  "timezone": {
+    "type": "string",
+    "description": "时区",
+    "hint": "IANA 时区名，例如 Asia/Shanghai。",
+    "default": "Asia/Shanghai"
+  },
+  "notify_session": {
+    "type": "string",
+    "description": "结果推送到的会话",
+    "hint": "每日任务完成后把报告发到这个会话（统一消息来源，形如 aiocqhttp:group_message:群号）。留空则不主动推送，只写日志。可用 /sid 查看当前会话。",
+    "default": ""
+  },
+  "leave_comment": {
+    "type": "bool",
+    "description": "是否留下评论",
+    "hint": "开启后，刷每个视频时会自动发表一条评论。需先完成扫码登录（/bili_login）或手动填写 SESSDATA/bili_jct。自动评论有风控/封号风险，请谨慎使用。",
+    "default": false
+  },
+  "comment_at": {
+    "type": "string",
+    "description": "评论@的B站账号（昵称）",
+    "hint": "评论时 @ 的 B 站昵称（不是 UID）。昵称必须与账号完全一致才能成功 @。",
+    "default": ""
+  },
+  "comment_text": {
+    "type": "string",
+    "description": "评论正文模板",
+    "hint": "评论正文，支持占位符 {title}（视频标题）、{author}（UP主）、{account}（@账号）。留空则只 @账号。",
+    "default": ""
+  },
+  "comment_interval": {
+    "type": "int",
+    "description": "每条评论间隔（秒）",
+    "hint": "两次评论之间的等待秒数，默认 8 秒，避免被限频。",
+    "default": 8
+  },
+  "sessdata": {
+    "type": "string",
+    "description": "B站 SESSDATA",
+    "hint": "登录 B 站的 Cookie 值，用于发评论。可用 /bili_login 扫码自动填入，无需手动复制。请勿把此值泄露给他人。",
+    "default": ""
+  },
+  "bili_jct": {
+    "type": "string",
+    "description": "B站 bili_jct（CSRF）",
+    "hint": "登录 B 站的 CSRF 值，同时作为评论接口的 csrf 校验。可用 /bili_login 扫码自动填入。请勿把此值泄露给他人。",
+    "default": ""
+  }
+}

@@ -1,0 +1,12 @@
+name: astrbot_plugin_bili_watcher
+display_name: B站刷视频
+short_desc: 按关键词搜索并“观看”B站视频，每日定时执行，可扫码登录后自动评论@账号。
+desc: 让机器人每天按设定数量、关键词搜索 B 站视频并模拟观看（安全浏览版，只拉取视频信息、记录观看，不做刷量）。支持每日定时任务与手动指令；支持 /bili_login 扫码登录获取 Cookie，并对刷到的视频自动评论并 @ 指定 B 站账号。
+help: /bili_login 扫码登录；/bili 立即刷一轮；/bili_keyword 关键词 指定关键词；/bili_status 查看状态；/bili_reset 重置今日计数；/bili_logout 清除登录。每日条数、关键词、执行时间、评论开关与@账号等请在插件设置中配置。
+version: v0.2.0
+author: DeepSeek Harness
+repo: https://github.com/tea1-bot/astrbot_plugin_bili_watcher
+astrbot_version: ">=4.16,<5"
+support_platforms:
+  - aiocqhttp
+  - qq_official

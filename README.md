@@ -15,9 +15,33 @@
 
 ## 安装
 
-1. 把本目录 `astrbot_plugin_bili_watcher` 整个复制到 AstrBot 插件目录：
-   `data/plugins/astrbot_plugin_bili_watcher`
-2. 在 AstrBot 面板「插件」页找到「B站刷视频」，点加载/启用（或重载插件、重启实例）。
+三种方式任选其一，推荐方式一。
+
+### 方式一：从链接安装（推荐，最简单）
+
+1. 打开 AstrBot 面板 →「插件」页 → 点「安装插件」。
+2. 切到「从链接」标签页，粘贴仓库地址：
+
+   ```
+   https://github.com/tea1-bot/astrbot_plugin_bili_watcher
+   ```
+
+3. 点安装，等待完成。
+4. 在「已安装插件」里找到「B站刷视频」，点加载/启用。
+
+### 方式二：下载 ZIP 上传安装
+
+1. 打开仓库页面，点绿色 **Code** 按钮 → **Download ZIP**。
+2. AstrBot 面板 →「插件」页 →「安装插件」→「从文件上传」→ 选择刚下载的 `.zip`。
+3. 安装完成后，在插件列表里启用「B站刷视频」。
+
+### 方式三：手动复制
+
+1. 下载 ZIP（或 `git clone` 仓库）并解压。
+2. 把包含 `main.py`、`metadata.yaml` 的文件夹重命名为 `astrbot_plugin_bili_watcher`，复制到 AstrBot 插件目录 `data/plugins/` 下。
+3. 重启 AstrBot（或重载插件），在插件列表里启用。
+
+> 依赖说明：`aiohttp`、`qrcode`、`Pillow` 均为 AstrBot 自带依赖，无需额外安装。
 
 ## 首次使用（推荐顺序）
 
